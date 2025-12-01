@@ -1,0 +1,6 @@
+.venv/
+
+
+data/interim/
+data/processed/
+
