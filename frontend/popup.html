@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sentiment API</title>
+
+    <style>
+        body {
+            width: 400px;   /* Set desired width */
+            height: 500px;  /* Set desired height */
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        #response {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 16px;
+            white-space: pre-wrap;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Test Sentiment</h1>
+
+    <button id="sendRequest">Send Random Text</button>
+
+    <div id="response"></div>
+
+    <script src="popup.js"></script>
+
+</body>
+</html>
