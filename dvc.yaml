@@ -29,14 +29,12 @@ stages:
       - model_building.max_depth
       - model_building.n_estimators
     outs:
-      - models/lgbm_model.pkl
-      - models/tfidf_vectorizer.pkl
+      - models/sentiment_pipeline.pkl
 
   model_evaluation:
     cmd: python src/model/model_evaluation.py
     deps:
-      - models/lgbm_model.pkl
-      - models/tfidf_vectorizer.pkl
+      - models/sentiment_pipeline.pkl
       - data/processed/train_processed.csv
       - data/processed/test_processed.csv
       - src/model/model_evaluation.py
