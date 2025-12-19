@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
   // ===== CONFIG (same as your working version) =====
-  const API_KEY = 'AIzaSyDBLon6pULtFwGsIoe8rqnTmhxBUp-NM88';
+  const API_KEY = 'API_KEY_HERE';  // Replace with your YouTube Data API v3 key
   const API_URL = 'http://localhost:5000';
 
   // ===== UI =====

@@ -4,3 +4,8 @@
 data/interim/
 data/processed/
 
+/experiment_info.json
+
+.env
+
+models/

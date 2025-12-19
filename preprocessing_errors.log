@@ -1,0 +1,7 @@
+2025-12-01 00:09:42,641 - data_preprocessing - ERROR - Failed to complete the data preprocessing process: [Errno 2] No such file or directory: '../../data/interim/train.csv'
+2025-12-01 00:10:21,883 - data_preprocessing - ERROR - Failed to complete the data preprocessing process: [Errno 2] No such file or directory: '../../data/interim/train.csv'
+2025-12-01 00:14:04,477 - data_preprocessing - ERROR - Failed to complete the data preprocessing process: [Errno 2] No such file or directory: '../../data/interim/train.csv'
+2025-12-01 00:15:23,237 - data_preprocessing - ERROR - Failed to complete the data preprocessing process: [Errno 2] No such file or directory: '../../data/interim/train.csv'
+2025-12-01 00:15:34,427 - data_preprocessing - ERROR - Failed to complete the data preprocessing process: [Errno 2] No such file or directory: './../data/interim/train.csv'
+2025-12-01 00:15:54,854 - data_preprocessing - ERROR - Failed to complete the data preprocessing process: [Errno 2] No such file or directory: '../data/interim/train.csv'
+2025-12-01 00:17:49,373 - data_preprocessing - ERROR - Failed to complete the data preprocessing process: [Errno 2] No such file or directory: '../../data/interim/train.csv'

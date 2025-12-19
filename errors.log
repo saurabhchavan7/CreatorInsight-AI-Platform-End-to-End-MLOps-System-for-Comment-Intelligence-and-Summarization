@@ -1,0 +1,12 @@
+2025-11-30 20:19:33,444 - data_ingestion - ERROR - Unexpected error occurred while loading the data: HTTP Error 404: Not Found
+2025-11-30 20:19:33,444 - data_ingestion - ERROR - Failed to complete the data ingestion process: HTTP Error 404: Not Found
+2025-11-30 20:21:04,546 - data_ingestion - ERROR - Unexpected error occurred while loading the data: HTTP Error 404: Not Found
+2025-11-30 20:21:04,547 - data_ingestion - ERROR - Failed to complete the data ingestion process: HTTP Error 404: Not Found
+2025-11-30 20:22:14,335 - data_ingestion - ERROR - Unexpected error occurred while loading the data: HTTP Error 404: Not Found
+2025-11-30 20:22:14,335 - data_ingestion - ERROR - Failed to complete the data ingestion process: HTTP Error 404: Not Found
+2025-11-30 20:27:42,116 - data_ingestion - ERROR - Unexpected error occurred while loading the data: HTTP Error 404: Not Found
+2025-11-30 20:27:42,116 - data_ingestion - ERROR - Failed to complete the data ingestion process: HTTP Error 404: Not Found
+2025-11-30 20:29:18,204 - data_ingestion - ERROR - Unexpected error occurred while loading the data: HTTP Error 404: Not Found
+2025-11-30 20:29:18,204 - data_ingestion - ERROR - Failed to complete the data ingestion process: HTTP Error 404: Not Found
+2025-11-30 20:43:39,205 - data_ingestion - ERROR - Unexpected error occurred while loading the data: HTTP Error 404: Not Found
+2025-11-30 20:43:39,208 - data_ingestion - ERROR - Failed to complete the data ingestion process: HTTP Error 404: Not Found
