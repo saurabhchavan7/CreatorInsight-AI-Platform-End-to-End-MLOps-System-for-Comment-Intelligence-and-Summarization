@@ -35,7 +35,7 @@ def test_model_signature(model_name, stage):
     # Assertions (SIGNATURE VALIDATION)
     assert len(predictions) == len(test_input), "Output length mismatch"
     assert all(
-        isinstance(p, (int, float, np.integer, np.floating))
+        isinstance(p, (np.integer, np.floating))
         for p in predictions
     ), "Invalid output type"
 
