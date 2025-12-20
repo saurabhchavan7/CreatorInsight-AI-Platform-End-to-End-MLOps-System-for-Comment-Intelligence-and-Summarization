@@ -26,7 +26,7 @@ CORS(app)  # Enable CORS for all routes
 # -----------------------------
 # Configuration
 # -----------------------------
-MLFLOW_TRACKING_URI = "http://ec2-52-206-9-129.compute-1.amazonaws.com:5000/"
+MLFLOW_TRACKING_URI = "http://ec2-54-172-186-220.compute-1.amazonaws.com:5000/"
 
 MODEL_NAME = "creatorinsight_sentiment_pipeline"
 MODEL_VERSION = "1"  # you can switch to "Production" later if you use stages
