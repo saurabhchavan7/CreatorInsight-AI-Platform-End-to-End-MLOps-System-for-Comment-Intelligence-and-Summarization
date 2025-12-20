@@ -99,15 +99,22 @@ def main():
             X_test_text = test_data['clean_comment'].values
             y_test = test_data['category'].values
 
-            # signature inference (raw text in -> preds out)
+            # ------------------------------------------------------------------
+            # Infer model signature (RAW TEXT → SENTIMENT)
+            # ------------------------------------------------------------------
             input_example = list(X_test_text[:5])
-           # signature = infer_signature(input_example, pipeline.predict(input_example))
+            output_example = pipeline.predict(input_example)
 
-            # log pipeline model (ONE artifact)
+            signature = infer_signature(input_example, output_example)
+
+            # Log pipeline model WITH signature
             mlflow.sklearn.log_model(
-            pipeline,
-            artifact_path="sentiment_pipeline"
+                pipeline,
+                artifact_path="sentiment_pipeline",
+                signature=signature,
+                input_example=input_example
             )
+
 
 
             # Save model info for registration step
