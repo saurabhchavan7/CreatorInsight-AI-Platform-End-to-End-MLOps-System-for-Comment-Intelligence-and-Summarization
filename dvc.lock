@@ -5,49 +5,49 @@ stages:
     deps:
     - path: src/ingestion/data_ingestion.py
       hash: md5
-      md5: bbb70871f8cfeacb9b304a8e6e743a85
-      size: 4417
+      md5: d72d38520bdf7c4942cbf18161b026d7
+      size: 4304
     params:
       params.yaml:
         data_ingestion.test_size: 0.25
     outs:
     - path: data/interim
       hash: md5
-      md5: 49d68ac9e22c6088d4afd89da38f5c38.dir
-      size: 6919701
+      md5: 661f9e98e322fdbd4e565be133b8a748.dir
+      size: 6882906
       nfiles: 2
   data_preprocessing:
     cmd: python src/preprocessing/data_preprocessing.py
     deps:
     - path: data/interim/test.csv
       hash: md5
-      md5: 2e81d6eb492d93987768f731e904781c
-      size: 1680931
+      md5: 7bcce30bf2a1cb8266436615cd99626e
+      size: 1671731
     - path: data/interim/train.csv
       hash: md5
-      md5: 18b3faba324bc010ea34ff2d9244645f
-      size: 5238770
+      md5: 9b68c84a82a9223b7605d7b5b5393ca4
+      size: 5211175
     - path: src/preprocessing/data_preprocessing.py
       hash: md5
-      md5: 756e6ea783bbd6a691ccf7911e7029fc
-      size: 3866
+      md5: fc882d6deb6f64452a30f59499306642
+      size: 3757
     outs:
     - path: data/processed
       hash: md5
-      md5: 056a565b1ab539e7c535709c3d4b5e92.dir
-      size: 5134850
+      md5: 3b131d597cf99cc074eab4638ea26eb4.dir
+      size: 5098055
       nfiles: 2
   model_building:
     cmd: python src/model/model_building.py
     deps:
     - path: data/processed/train_processed.csv
       hash: md5
-      md5: b5a818f46d32f38de3b86a761aa39e1e
-      size: 3886282
+      md5: 93048fefdfb15643899972fbc0631795
+      size: 3858687
     - path: src/model/model_building.py
       hash: md5
-      md5: 68bba38bfa619d38426ed4fade1609b3
-      size: 9335
+      md5: 917fbcf35cf04de8c1e07a0762808862
+      size: 9073
     params:
       params.yaml:
         model_building.learning_rate: 0.09
@@ -60,40 +60,40 @@ stages:
     outs:
     - path: models/sentiment_pipeline.pkl
       hash: md5
-      md5: a43cc19d1db8d2a5aaf58679f951d60e
-      size: 4449091
+      md5: 41359a566bf81ddb442008e994bb6779
+      size: 4489049
   model_evaluation:
     cmd: python src/model/model_evaluation.py
     deps:
     - path: data/processed/test_processed.csv
       hash: md5
-      md5: 20e0d1f7475c3f6ff20400efbc8c4774
-      size: 1248568
+      md5: d2471212889c93634224a9038ca3a203
+      size: 1239368
     - path: data/processed/train_processed.csv
       hash: md5
-      md5: b5a818f46d32f38de3b86a761aa39e1e
-      size: 3886282
+      md5: 93048fefdfb15643899972fbc0631795
+      size: 3858687
     - path: models/sentiment_pipeline.pkl
       hash: md5
-      md5: a43cc19d1db8d2a5aaf58679f951d60e
-      size: 4449091
+      md5: 41359a566bf81ddb442008e994bb6779
+      size: 4489049
     - path: src/model/model_evaluation.py
       hash: md5
-      md5: d595fb7f86a0b2e49f7d7b70e58a2b0b
-      size: 13225
+      md5: ae6360e9d82c83d9a66ed0a17f5eabf1
+      size: 12869
     outs:
     - path: experiment_info.json
       hash: md5
-      md5: ea33d7fc604d61c32270e442a66a4717
-      size: 95
+      md5: 825ef5ee6c262d794ce57bc5ec55eb95
+      size: 92
   model_registration:
     cmd: python src/model/register_model.py
     deps:
     - path: experiment_info.json
       hash: md5
-      md5: ea33d7fc604d61c32270e442a66a4717
-      size: 95
+      md5: 825ef5ee6c262d794ce57bc5ec55eb95
+      size: 92
     - path: src/model/register_model.py
       hash: md5
-      md5: 155885fc20c53d48087c4dc67a5c06f1
-      size: 2481
+      md5: ee4b0fd8c242f7b13f93acef0337d20f
+      size: 2406
