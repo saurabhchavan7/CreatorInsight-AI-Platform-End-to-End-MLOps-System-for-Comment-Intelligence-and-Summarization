@@ -60,7 +60,7 @@ stages:
     outs:
     - path: models/sentiment_pipeline.pkl
       hash: md5
-      md5: 2cae79c2d1b759198a2c7a20d80f172b
+      md5: 0e754abb6a5c3e19c4a73cdcf8f0c74e
       size: 4489049
   model_evaluation:
     cmd: python src/model/model_evaluation.py
@@ -75,7 +75,7 @@ stages:
       size: 3858687
     - path: models/sentiment_pipeline.pkl
       hash: md5
-      md5: 2cae79c2d1b759198a2c7a20d80f172b
+      md5: 0e754abb6a5c3e19c4a73cdcf8f0c74e
       size: 4489049
     - path: src/model/model_evaluation.py
       hash: md5
@@ -84,14 +84,14 @@ stages:
     outs:
     - path: experiment_info.json
       hash: md5
-      md5: e4d2a6a506ecd8e5f321897854985093
+      md5: a45c7a48d603e9902ef2dfccb4125787
       size: 92
   model_registration:
     cmd: python src/model/register_model.py
     deps:
     - path: experiment_info.json
       hash: md5
-      md5: e4d2a6a506ecd8e5f321897854985093
+      md5: a45c7a48d603e9902ef2dfccb4125787
       size: 92
     - path: src/model/register_model.py
       hash: md5
