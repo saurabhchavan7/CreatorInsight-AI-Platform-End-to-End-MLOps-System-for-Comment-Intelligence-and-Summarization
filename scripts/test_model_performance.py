@@ -5,7 +5,7 @@ import mlflow
 from mlflow.tracking import MlflowClient
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
-mlflow.set_tracking_uri("http://ec2-18-234-210-41.compute-1.amazonaws.com:5000/")
+mlflow.set_tracking_uri("http://ec2-23-22-145-146.compute-1.amazonaws.com:5000/")
 
 @pytest.mark.parametrize(
     "model_name, stage, test_data_path",
@@ -37,7 +37,7 @@ def test_model_performance(model_name, stage, test_data_path):
     # 3) Predict
     y_pred = model.predict(X_test)
 
-    # ✅ Guardrail: avoid silent “1 prediction” bugs forever
+    #  Guardrail: avoid silent “1 prediction” bugs forever
     assert len(y_pred) == len(y_true), f"Prediction count mismatch: y_pred={len(y_pred)} y_true={len(y_true)}"
 
     # 4) Metrics

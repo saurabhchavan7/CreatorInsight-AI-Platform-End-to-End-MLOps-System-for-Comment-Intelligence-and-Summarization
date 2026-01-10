@@ -3,7 +3,7 @@ import pytest
 from mlflow.tracking import MlflowClient
 
 # Set your remote tracking URI
-mlflow.set_tracking_uri("http://ec2-18-234-210-41.compute-1.amazonaws.com:5000/")
+mlflow.set_tracking_uri("http://ec2-23-22-145-146.compute-1.amazonaws.com:5000/")
 
 @pytest.mark.parametrize("model_name, stage", [
     ("creatorinsight_sentiment_pipeline", "staging"),])

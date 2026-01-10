@@ -106,16 +106,34 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_DEFAULT_REGION: us-east-1
         run: |
-          nohup python backend/flask_app/app.py > flask.log 2>&1 &
-          echo "Waiting for Flask to start..."
-          for i in {1..30}; do
-            curl -s http://127.0.0.1:5000/ && break
-            sleep 1
-          done
+          nohup python backend/flask_app/app.py &
 
       - name: Run Flask API tests
         run: |
           pytest scripts/test_flask_api.py
+
+
+      - name: Login to AWS ECR
+        if: success()
+        run: |
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 992382586780.dkr.ecr.us-east-1.amazonaws.com 
+
+      - name: Build Docker image
+        if: success()
+        run: |
+          docker build -t creatorinsight-flask-api .
+
+      - name: Tag Docker image
+        if: success()
+        run: |
+          docker tag creatorinsight-flask-api:latest 992382586780.dkr.ecr.us-east-1.amazonaws.com/creatorinsight-ml-api:latest
+
+      - name: Push Docker image to AWS ECR
+        if: success()
+        run: |
+          docker push 992382586780.dkr.ecr.us-east-1.amazonaws.com/creatorinsight-ml-api:latest 
 
 
 
